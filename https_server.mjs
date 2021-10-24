@@ -6,7 +6,7 @@ var port_secure = 8443;
 var port_unsecured = 8080;
 let server_base_options = {
 	originWhitelist: [], // Allow all origins
-	// requireHeader: ['origin', 'x-requested-with'],
+	requireHeader: ['origin', 'x-requested-with'],
 	removeHeaders: ['cookie', 'cookie2'],
 };
 
