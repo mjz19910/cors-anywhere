@@ -21,8 +21,8 @@ createServer({
 	this.cert = void 0;
 	this.key = void 0;
 
-	console.log('Running CORS Anywhere for https on ' + host + ':' + port_secure);
+	console.log('Running CORS Anywhere for https\ton ' + host + ':' + port_secure);
 });
 createServer(server_base_options).listen(port_unsecured, host, function() {
-	console.log('Running CORS Anywhere for http  on ' + host + ':' + port_unsecured);
+	console.log('Running CORS Anywhere for http\ton ' + host + ':' + port_unsecured);
 });
