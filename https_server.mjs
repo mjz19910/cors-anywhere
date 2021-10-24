@@ -17,7 +17,10 @@ class PromiseDelay {
 			object_ref: new WeakRef(this)
 		};
 		let promise = make_delay_promise(pd_state);
-		promise.then(when_done);
+		let t = this;
+		promise.then(function() {
+			t.on_complete();
+		});
 		this.on_complete = when_done;
 		this.immediate = true;
 		if(!this.accept)
@@ -31,7 +34,8 @@ class PromiseDelay {
 			};
 	}
 	done() {
-		if(this.immediate){
+		if(this.immediate) {
+			this.accept();
 			return void this.on_complete();
 		}
 		this.accept();
