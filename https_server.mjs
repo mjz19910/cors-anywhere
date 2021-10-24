@@ -19,6 +19,9 @@ class PromiseDelay {
 		let promise = make_delay_promise(pd_state);
 		let t = this;
 		promise.then(function() {
+			if(t.immediate){
+				return;
+			}
 			t.on_complete();
 		});
 		this.on_complete = when_done;
