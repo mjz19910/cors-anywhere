@@ -54,6 +54,7 @@ createServer({
 	// clear the keys from the javascript view, make it harder to access
 	this.cert = void 0;
 	this.key = void 0;
+
 	console.log('Running CORS Anywhere for https on ' + host + ':' + port_secure);
 });
 next_server_state.done();
